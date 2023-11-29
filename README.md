@@ -15,7 +15,7 @@ This Staking Module is a smart contract written in Solidity for staking and earn
 - Solidity compiler version 0.8.19.
 - [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) library for ERC-20 token interfaces.
 - [forge-std](https://github.com/surejam/forge-std) library for console functionality.
-- [ReentrancyGuard](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol) from OpenZeppelin for protection against reentrancy attacks.
+- [ReentrancyGuard](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol) from OpenZeppelin for protection against reentrancy attacks.
 
 ### Installation
 1. Install the necessary dependencies, including OpenZeppelin and forge-std.
