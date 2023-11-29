@@ -1,12 +1,11 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 
-import {Script, console2} from "forge-std/Script.sol";
+import {Script} from "forge-std/Script.sol";
+import {StakingModule} from "../src/StakingModule.sol";
 
-contract CounterScript is Script {
-    function setUp() public {}
-
-    function run() public {
-        vm.broadcast();
-    }
+contract DeployStakingModule is Script {
+/* function run() public {
+        vm.startBroadcast();
+    } */
 }

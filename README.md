@@ -1,66 +1,49 @@
-## Foundry
+# Staking Module
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
+This Staking Module is a smart contract written in Solidity for staking and earning rewards using two ERC-20 tokens. Users can stake a specified amount of staking tokens and earn rewards in a separate token when rewards are accrued. The contract dynamically calculates and updates the reward rate based on the staking and rewards token balances. Staked tokens can be unstaked at any time, and rewards can be claimed without unstaking.
 
-Foundry consists of:
+## Features
+- Stake tokens to earn rewards.
+- Unstake tokens.
+- Claim rewards without unstaking.
+- Dynamic calculation of reward rates based on token balances.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Getting Started
 
-## Documentation
+### Prerequisites
+- Solidity compiler version 0.8.19.
+- [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) library for ERC-20 token interfaces.
+- [forge-std](https://github.com/surejam/forge-std) library for console functionality.
+- [ReentrancyGuard](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol) from OpenZeppelin for protection against reentrancy attacks.
 
-https://book.getfoundry.sh/
+### Installation
+1. Install the necessary dependencies, including OpenZeppelin and forge-std.
+2. Compile the Solidity code using the Solidity compiler version 0.8.19.
+3. Deploy the contract to an EVM-compatible blockchain.
 
 ## Usage
 
-### Build
+### Constructor
+- `constructor(address _stakingToken, address _rewardToken)`: Initializes the contract with addresses of the staking and reward tokens.
 
-```shell
-$ forge build
-```
+### Staking
+- `stake(uint256 amountToStake)`: Stake a specified amount of staking tokens to earn rewards.
 
-### Test
+### Unstaking
+- `unstake(uint256 amountToUnstake)`: Unstake a specified amount of staking tokens and claim rewards.
 
-```shell
-$ forge test
-```
+### Claiming Rewards
+- `claim()`: Claim rewards without unstaking.
 
-### Format
+### View Functions
+- `getRewardOf(address user)`: Get the pending rewards for a specific user.
 
-```shell
-$ forge fmt
-```
+## Error Handling
+The contract includes custom error messages to provide clarity in case of failures during stake, unstake, and claim operations.
 
-### Gas Snapshots
+## Author
+- **surejam**
 
-```shell
-$ forge snapshot
-```
+Feel free to contribute, report issues, or suggest improvements. Happy staking!
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
